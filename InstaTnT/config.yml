@@ -1,0 +1,16 @@
+##############################################################
+################# InstaTnT ###################################
+################# Config #####################################
+############# By TheEpicButterStudios ########################
+########### InstaTnT Version 0.4 Beta ########################
+##############################################################
+# Want the plugin to be enabled? DEFAULT: true
+plugin-enabled: true
+# NOTICE: PLEASE don't uncomment/comment ANY LINES WHATSOEVER
+# Thanks ;)
+# INDEV: Do you want to use permissions? Default: true
+#use-perms: true        # INDEV
+# INDEV: Make a sound? DEFAULT: true
+#make-sound: true       # INDEV
+# INDEV: How many ticks until the TnT Explodes? DEFAULT: 8 INSTANTLY EXPLODE: SET TO -1
+#explode-ticks: 8
