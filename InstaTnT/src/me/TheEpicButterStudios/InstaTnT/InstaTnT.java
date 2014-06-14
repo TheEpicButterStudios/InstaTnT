@@ -1,7 +1,9 @@
 /**
  * InstaTnT.java
  * 
- * Last edited 3/17/2014
+ * Last edited 6/14/2014
+ * 
+ * Uploaded to Visual Studio online 6/5/14
  * 
  * @author TheEpicButterStudios
  * 
@@ -44,30 +46,25 @@ import org.bukkit.plugin.java.JavaPlugin;
 	public class InstaTnT extends JavaPlugin implements Listener
 	{
 	public final ArrayList<Player> InstaTnTUsers = new ArrayList<Player>();
-	String version = "Snapshot 12913";
-//	public boolean enable = getConfig().getBoolean("plugin-enabled");
+	String version = "Release 1.0";
+boolean enable = getConfig().getBoolean("plugin-enabled");
 
     @Override
 	public void onEnable()
 		{
+    	    if(enable)
+    	    {
+    	    	Bukkit.getPluginManager().disablePlugin(this);
+    	    }
 			getLogger().info("has been enabled!");
 			getLogger().info("by TheEpicButterStudios!");
 			getLogger().info("Running version " + version + ".");
 			getLogger().info("----- InstaTnT -----");
-			getLogger().info("Checking for config...." + " Loading config and checking methods....");
-			getLogger().info("Checking Methods...." +  "Done!");
-			getLogger().severe("Run Analysis...." +  "VERY HIGH CRASH PROBABILITY. ABORTING!!!");
-			getLogger().info("----- Disabled! -----");
-			Bukkit.getPluginManager().disablePlugin(this);
+			getLogger().info("----- Enabled -----");
+			getLogger().info("Well, happy explosions!");
 			getServer().getPluginManager().registerEvents(this, this);
 			getConfig().options().copyDefaults(true);
-/*			if(getConfig().getBoolean(plugin-enabled, true))
- *			{
- *				getLogger().severe("InstaTnT has set to be DISABLED in the config! ABORTING INSTATNT!");
- *				getLogger().severe("Set plugin-enabled to true in config.yml if you want to run InstaTnT.");
- *				getLogger().severe("ABORTED!");
- *				getServer().getPluginManager().disablePlugin(null);
- */		}
+		}
 
     
     @Override
@@ -88,14 +85,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 					toggleInstaTnT((Player) sender);
 						if(args[0].equalsIgnoreCase("help"))
 						{
-							((Player) sender).sendMessage("oOo------------- InstaTnT Help ------------oOo");
-							((Player) sender).sendMessage("/instaboom: Enables InstaTnT --------------oOo");
-							((Player) sender).sendMessage("/instaboom help: Opens help screen.--------oOo");
-							((Player) sender).sendMessage("/instaboom reload: Reloads InstaTnT. ------oOo");
-							((Player) sender).sendMessage("/instaboom reload full: Reloads the server. OP ONLY! -oOo");
-							((Player) sender).sendMessage("InstaTnT version " + version + " by TheEpicButterStudios");
-							((Player) sender).sendMessage("/instatnt [arguments]: Does the same as /instaboom");
-							((Player) sender).sendMessage("oOo------------- InstaTnT Help ------------oOo");
+							((Player) sender).sendMessage(ChatColor.DARK_AQUA + "oOo------------- InstaTnT Help ------------oOo");
+							((Player) sender).sendMessage(ChatColor.YELLOW + "/instaboom: Enables InstaTnT --------------oOo");
+							((Player) sender).sendMessage(ChatColor.YELLOW + "/instaboom help: Opens help screen.--------oOo");
+							((Player) sender).sendMessage(ChatColor.RED + "/instaboom reload: Reloads InstaTnT.  OP ONLY! -oOo");
+							((Player) sender).sendMessage(ChatColor.RED + "/instaboom reload full: Reloads the server. OP ONLY! -oOo");
+							((Player) sender).sendMessage(ChatColor.LIGHT_PURPLE + "/instaboom dev: Are you a plugin dev intrested in helping? -oOo");
+							((Player) sender).sendMessage(ChatColor.LIGHT_PURPLE + "                Command displays info about helping! Not OP only. -oOo");
+							((Player) sender).sendMessage(ChatColor.GRAY + "InstaTnT version " + version + " by TheEpicButterStudios");
+							((Player) sender).sendMessage(ChatColor.YELLOW + "/instatnt [arguments]: Does the same as /instaboom [args] -oOo");
+							((Player) sender).sendMessage(ChatColor.DARK_AQUA + "oOo------------- InstaTnT Help ------------oOo");
 						}
 						if(args[0].equalsIgnoreCase("reload") && ((Player) sender).isOp())
 						{
@@ -111,7 +110,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 								}
 							}
 						}
+				        if(args[0].equalsIgnoreCase("dev")) {
+				        	((Player) sender).sendMessage("Email theepicbutterstudios@gmail.com for info and spaces!");
+				        	
+				        }
+					
 				}
+				
 			}
 			
 		return false;
@@ -148,10 +153,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 		public static Player player;
 		@EventHandler(priority=EventPriority.HIGH)
 		public void PlayerJoin(PlayerJoinEvent e){
-		    if(e.getPlayer().isOp())
+		    if(e.getPlayer().isOp() || e.getPlayer().hasPermission("instatnt.all"))
 			{
-				e.getPlayer().sendMessage("InstaTnt is running version " + version);
-			} else {}
+				e.getPlayer().sendMessage("InstaTnT is running version " + version);
+			}
 			return;
 		}
 		@EventHandler(priority=EventPriority.NORMAL)
