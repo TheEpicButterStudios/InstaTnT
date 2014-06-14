@@ -23,7 +23,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /*
@@ -45,7 +44,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 	{
 	public final ArrayList<Player> InstaTnTUsers = new ArrayList<Player>();
 	String version = "Release 1.0";
-boolean enable = getConfig().getBoolean("plugin-enabled");
+    boolean enable = getConfig().getBoolean("plugin-enabled");
 
     @Override
 	public void onEnable()
@@ -70,7 +69,7 @@ boolean enable = getConfig().getBoolean("plugin-enabled");
 		{
 			getLogger().info("Has Been Disabled.");
 			getLogger().info("Good Night!");
-//			saveConfig();
+			saveConfig();
 		}
 		
 		public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) 
@@ -98,7 +97,7 @@ boolean enable = getConfig().getBoolean("plugin-enabled");
 						}
 						if(args[0].equalsIgnoreCase("reload") && ((Player) sender).isOp())
 						{
-//							reloadConfig();
+							reloadConfig();
 							((Player) sender).sendMessage("Reloaded InstaTnT, version " + version + ".");
 							if((args[1].equalsIgnoreCase("full")) || args[0].equalsIgnoreCase("reload"))
 							{
@@ -151,14 +150,6 @@ boolean enable = getConfig().getBoolean("plugin-enabled");
 			return InstaTnTUsers.contains(player);
 		}
 		public static Player player;
-		@EventHandler(priority=EventPriority.HIGH)
-		public void PlayerJoin(PlayerJoinEvent e){
-		    if(e.getPlayer().isOp() || e.getPlayer().hasPermission("instatnt.all"))
-			{
-				e.getPlayer().sendMessage("InstaTnT is running version " + version);
-			}
-			return;
-		}
 		@EventHandler(priority=EventPriority.NORMAL)
 		public void BlockPlace(BlockPlaceEvent event){
 			if(InstaTnTUsers.contains(event.getPlayer())){
