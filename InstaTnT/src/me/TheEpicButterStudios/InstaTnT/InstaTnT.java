@@ -3,11 +3,9 @@
  * 
  * Last edited 6/14/2014
  * 
- * Uploaded to Visual Studio online 6/5/14
- * 
  * @author TheEpicButterStudios
  * 
- * @version 0.4 beta
+ * @version 1.0
  */
 
 
@@ -82,7 +80,9 @@ boolean enable = getConfig().getBoolean("plugin-enabled");
 				{
 					(sender).sendMessage("You must be a player to use InstaTnT! (InstaTnT error code 29)");
 				} else {
-					toggleInstaTnT((Player) sender);
+					if(args[0].equals(null)){
+						toggleInstaTnT((Player) sender);
+					}
 						if(args[0].equalsIgnoreCase("help"))
 						{
 							((Player) sender).sendMessage(ChatColor.DARK_AQUA + "oOo------------- InstaTnT Help ------------oOo");

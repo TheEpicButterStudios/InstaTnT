@@ -1,11 +1,11 @@
 name: InstaTnT
 main: me.TheEpicButterStudios.InstaTnT.InstaTnT
-version: 0.3.9
+version: 1.0
 author: TheEpicButterStudios
 commands:
    instaboom:
       description: Enable InstaTnT.
-      usage: Try /instaboom [help/reload {full}]
+      usage: What u type man? Ain't nobody find dat argument! Do /instaboom help, dawg! [Say what?]
 permissions:
    instatnt.reload.full:
       description: Allows you to run /instaboom reload full

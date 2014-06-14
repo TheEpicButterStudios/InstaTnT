@@ -13,4 +13,4 @@ plugin-enabled: true
 # INDEV: Make a sound? DEFAULT: true
 #make-sound: true       # INDEV
 # INDEV: How many ticks until the TnT Explodes? DEFAULT: 8 INSTANTLY EXPLODE: SET TO -1
-#explode-ticks: 8
+#explode-ticks: 8       # INDEV 
