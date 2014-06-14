@@ -11,5 +11,11 @@ permissions:
       description: Allows you to run /instaboom reload full
       default: op
    instatnt.all:
-      description: Allows acces to everything.
+      description: Allows access to everything.
+      default: op
+      children:
+      - instatnt.use
+      - instatnt.reload.full
+   instatnt.use:
+      description: Allow access to enable InstaTnT.
       default: op
