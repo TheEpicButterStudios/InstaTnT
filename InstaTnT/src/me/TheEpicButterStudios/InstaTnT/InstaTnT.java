@@ -79,7 +79,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 				{
 					(sender).sendMessage("You must be a player to use InstaTnT! (InstaTnT error code 29)");
 				} else {
-					if(args[0].equals(null)){
+					if(args[0].equals(null) && (((Player) sender).hasPermission("instatnt.use"))){
 						toggleInstaTnT((Player) sender);
 					}
 						if(args[0].equalsIgnoreCase("help"))

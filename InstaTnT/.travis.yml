@@ -1,0 +1,8 @@
+deploy:
+  provider: releases
+  api-key: "InstaTnT_Travis"
+  file: "InstaTnT.git"
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true
