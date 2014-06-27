@@ -1,7 +1,7 @@
 /**
  * InstaTnT.java
  * 
- * Last edited 6/14/2014
+ * Last edited 6/27/2014
  * 
  * @author TheEpicButterStudios
  * 
@@ -49,7 +49,7 @@ import org.bukkit.plugin.java.JavaPlugin;
     @Override
 	public void onEnable()
 		{
-    	    if(enable)
+    	    if(!enable)
     	    {
     	    	Bukkit.getPluginManager().disablePlugin(this);
     	    }
