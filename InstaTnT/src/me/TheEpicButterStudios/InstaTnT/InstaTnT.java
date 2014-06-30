@@ -12,6 +12,9 @@
 package me.TheEpicButterStudios.InstaTnT;
 import java.util.ArrayList;
 
+import me.TheEpicButterStudios.InstaTnT.Updater.UpdateResult;
+import me.TheEpicButterStudios.InstaTnT.Updater.UpdateType;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -61,6 +64,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 			getLogger().info("Well, happy explosions!");
 			getServer().getPluginManager().registerEvents(this, this);
 			getConfig().options().copyDefaults(true);
+			Updater updater = new Updater(this, 55555, this.getFile(), UpdateType.DEFAULT, true);
+			if (updater.getResult() == UpdateResult.UPDATE_AVAILABLE) {
+			    this.getLogger().info("New version available! " + updater.getLatestName());
+			}
 		}
 
     
