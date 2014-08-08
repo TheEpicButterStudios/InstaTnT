@@ -1,7 +1,7 @@
 /**
  * InstaTnT.java
  * 
- * Last edited 6/27/2014
+ * Last edited 6/30/2014
  * 
  * @author TheEpicButterStudios
  * 
@@ -46,8 +46,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 	public class InstaTnT extends JavaPlugin implements Listener
 	{
 	public final ArrayList<Player> InstaTnTUsers = new ArrayList<Player>();
-	String version = "Release 1.0";
+	String version = "Release 1.1";
     boolean enable = getConfig().getBoolean("plugin-enabled");
+    boolean update = getConfig().getBoolean("auto-update");
 
     @Override
 	public void onEnable()
@@ -64,10 +65,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 			getLogger().info("Well, happy explosions!");
 			getServer().getPluginManager().registerEvents(this, this);
 			getConfig().options().copyDefaults(true);
-			Updater updater = new Updater(this, 55555, this.getFile(), UpdateType.DEFAULT, true);
+			if(update) {
+			Updater updater = new Updater(this, 67156, this.getFile(), UpdateType.DEFAULT, true);
 			if (updater.getResult() == UpdateResult.UPDATE_AVAILABLE) {
 			    this.getLogger().info("New version available! " + updater.getLatestName());
-			}
+			}}
 		}
 
     
