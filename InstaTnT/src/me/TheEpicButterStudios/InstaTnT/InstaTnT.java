@@ -7,6 +7,12 @@
  * 
  * @version 1.0
  */
+/**
+ * InstaTnT - By TheEpicButterStudios
+ * 
+ * InstaTnT <b>usage:</b>
+ * Coming soon.
+ */
 
 
 package me.TheEpicButterStudios.InstaTnT;
