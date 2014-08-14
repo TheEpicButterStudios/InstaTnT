@@ -1,20 +1,3 @@
-/**
- * InstaTnT.java
- * 
- * Last edited 6/30/2014
- * 
- * @author TheEpicButterStudios
- * 
- * @version 1.0
- */
-/**
- * InstaTnT - By TheEpicButterStudios
- * 
- * InstaTnT <b>usage:</b>
- * Coming soon.
- */
-
-
 package me.TheEpicButterStudios.InstaTnT;
 import java.util.ArrayList;
 
@@ -48,7 +31,18 @@ import org.bukkit.plugin.java.JavaPlugin;
  * 9 - Internal plugin error - Create a ticket at http://dev.bukkit.org/bukkit-plugins/instatnt/tickets/ so I can resolve it
  * 29- Invalid sender (Player instance not found)
  */
- 
+/**
+ * InstaTnT.java
+ * <br>
+ * Last edited 6/30/2014
+ * <br>
+ * <b>InstaTnT usage:</b>
+ * <br>Coming soon.
+ * @author TheEpicButterStudios
+ * 
+ * @version 1.0
+ * 
+ */
 	public class InstaTnT extends JavaPlugin implements Listener
 	{
 	public final ArrayList<Player> InstaTnTUsers = new ArrayList<Player>();
@@ -74,7 +68,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 			if(update) {
 			Updater updater = new Updater(this, 67156, this.getFile(), UpdateType.DEFAULT, true);
 			if (updater.getResult() == UpdateResult.UPDATE_AVAILABLE) {
-			    this.getLogger().info("New version available! " + updater.getLatestName());
+			    this.getLogger().info("New version available! " + updater.getLatestName() + " Downloading...");
 			}}
 		}
 
