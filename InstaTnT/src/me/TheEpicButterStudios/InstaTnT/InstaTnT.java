@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 import me.TheEpicButterStudios.InstaTnT.Updater.UpdateResult;
 import me.TheEpicButterStudios.InstaTnT.Updater.UpdateType;
+import me.TheEpicButterStudios.InstaTnT.exception.*;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -15,6 +16,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /*
@@ -46,9 +48,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 	public class InstaTnT extends JavaPlugin implements Listener
 	{
 	public final ArrayList<Player> InstaTnTUsers = new ArrayList<Player>();
-	String version = "Release 1.1";
+	public String version = "Development";
     boolean enable = getConfig().getBoolean("plugin-enabled");
     boolean update = getConfig().getBoolean("auto-update");
+    SenderIsNotInstanceOfPlayerException SenderIsNotInstanceOfPlayerException = new SenderIsNotInstanceOfPlayerException();
 
     @Override
 	public void onEnable()
@@ -86,7 +89,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 			if(commandLabel.equalsIgnoreCase("instaboom")){
 				if(!(sender instanceof Player))
 				{
-					(sender).sendMessage("You must be a player to use InstaTnT! (InstaTnT error code 29)");
+					try {
+						throw SenderIsNotInstanceOfPlayerException;
+					} catch (SenderIsNotInstanceOfPlayerException e) {
+						sender.sendMessage("YOU HAVE TO BE A PLAYER TO USE INSTATNT! WHY WOULD YOU PLACE TNT IN THE CONSOLE?");
+						sender.sendMessage("ARE YOU OUT OF YOUR MIND? THINK, MAN! CMON! (What plugin are you usingto place blocks from the console? YOU'RE NOT USING ONE!!!)");
+						e.printStackTrace();
+					}
 				} else {
 					if(args[0].equals(null)){
 						toggleInstaTnT((Player) sender);
