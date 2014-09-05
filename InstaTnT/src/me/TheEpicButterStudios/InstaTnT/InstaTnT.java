@@ -48,7 +48,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 	public class InstaTnT extends JavaPlugin implements Listener
 	{
 	public final ArrayList<Player> InstaTnTUsers = new ArrayList<Player>();
-	public String version = "Development";
+	public String version = "v1.0-DEV";
     boolean enable = getConfig().getBoolean("plugin-enabled");
     boolean update = getConfig().getBoolean("auto-update");
     protected SenderIsNotInstanceOfPlayerException SenderIsNotInstanceOfPlayerException = new SenderIsNotInstanceOfPlayerException();
