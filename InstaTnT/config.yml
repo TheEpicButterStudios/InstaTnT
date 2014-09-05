@@ -7,7 +7,7 @@
 # Want the plugin to be enabled? DEFAULT: true
 plugin-enabled: true
 # Use the auto-updater? Default: true
-auto-update: true
+auto-update: false
 # *Kinda* works:
 # Toggle InstaTnT WITHOUT a command? (Good for minigame/HG servers.) Default: false
 disable-cmd: false
