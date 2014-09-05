@@ -51,6 +51,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 	public String version = "v1.0-DEV";
     boolean enable = getConfig().getBoolean("plugin-enabled");
     boolean update = getConfig().getBoolean("auto-update");
+    public boolean disable_cmd = getConfig().getBoolean("disable-cmd");
     protected SenderIsNotInstanceOfPlayerException SenderIsNotInstanceOfPlayerException = new SenderIsNotInstanceOfPlayerException();
 
     @Override

@@ -25,6 +25,12 @@ public class onCommand extends InstaTnT
 					e.printStackTrace();
 				}
 			} else {
+				if(super.disable_cmd)
+				{
+					((Player) sender).sendMessage("Sorry, what?");
+					
+					return false;
+				}
 				if(args[0].equals(null)){
 					super.toggleInstaTnT((Player) sender);
 				}

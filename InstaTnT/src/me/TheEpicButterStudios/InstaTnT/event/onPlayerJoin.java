@@ -8,6 +8,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import me.TheEpicButterStudios.InstaTnT.InstaTnT;
 
 public class onPlayerJoin extends InstaTnT implements Listener {
+	InstaTnT InstaTnT = new InstaTnT();
 	
 	@EventHandler(priority=EventPriority.HIGHEST)
 	public void PlayerJoin(PlayerJoinEvent e){
@@ -15,7 +16,10 @@ public class onPlayerJoin extends InstaTnT implements Listener {
 		{
 			e.getPlayer().sendMessage("InstaTnT is running version " + version);
 		}
+		if(InstaTnT.disable_cmd)
+		{
+			toggleInstaTnT(e.getPlayer());
+		}
 		return;
 	}
-
-}
+	}

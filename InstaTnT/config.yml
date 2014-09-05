@@ -1,13 +1,16 @@
 ##############################################################
-################# InstaTnT ###################################
-################# Config #####################################
-############# By TheEpicButterStudios ########################
-########### InstaTnT Version 0.4 Beta ########################
+####################### InstaTnT #############################
+######################## Config ##############################
+############### By TheEpicButterStudios ######################
+############### InstaTnT Version 1.0  ########################
 ##############################################################
 # Want the plugin to be enabled? DEFAULT: true
 plugin-enabled: true
 # Use the auto-updater? Default: true
 auto-update: true
+# *Kinda* works:
+# Toggle InstaTnT WITHOUT a command? (Good for minigame/HG servers.) Default: false
+disable-cmd: false
 # NOTICE: PLEASE don't uncomment/comment ANY LINES WHATSOEVER
 # Thanks ;)
 # INDEV: Do you want to use permissions? Default: true
