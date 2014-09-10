@@ -14,7 +14,7 @@ public class onCommand extends InstaTnT
 	@SuppressWarnings("all")
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) 
 	{
-		if(commandLabel.equalsIgnoreCase("instaboom")){
+		if(commandLabel.equalsIgnoreCase("instaboom") || commandLabel.equalsIgnoreCase("instatnt")){
 			if(!(sender instanceof Player))
 			{
 				try {

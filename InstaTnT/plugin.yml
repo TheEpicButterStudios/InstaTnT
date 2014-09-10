@@ -5,11 +5,10 @@ author: TheEpicButterStudios
 commands:
    instaboom:
       description: Enable InstaTnT.
-      usage: What u type man? Ain't nobody find dat argument! Do /instaboom help, dawg! [Say what?]
 permissions:
    instatnt.reload.full:
       description: Allows you to run /instaboom reload full
       default: op
    instatnt.all:
-      description: Allows acces to everything.
+      description: Allows access to everything.
       default: op
