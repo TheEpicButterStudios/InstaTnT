@@ -3,15 +3,21 @@ package me.TheEpicButterStudios.InstaTnT.event;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import me.TheEpicButterStudios.InstaTnT.InstaTnT;
 import me.TheEpicButterStudios.InstaTnT.exception.SenderIsNotInstanceOfPlayerException;
 
-public class onCommand extends InstaTnT
+public class onCommand extends InstaTnT implements CommandExecutor
 {
-	@SuppressWarnings("all")
+	private InstaTnT plugin;
+	public onCommand(InstaTnT plugin)
+	{
+		this.plugin = plugin;
+	}
+	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) 
 	{
 		if(commandLabel.equalsIgnoreCase("instaboom") || commandLabel.equalsIgnoreCase("instatnt")){
@@ -25,6 +31,10 @@ public class onCommand extends InstaTnT
 					e.printStackTrace();
 				}
 			} else {
+				if(args.length > 2)
+				{
+					sender.sendMessage("Too many arguments! Try /instaboom help");
+				}
 				if(super.disable_cmd)
 				{
 					((Player) sender).sendMessage("Sorry, what?");

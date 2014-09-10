@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import me.TheEpicButterStudios.InstaTnT.Updater.UpdateResult;
 import me.TheEpicButterStudios.InstaTnT.Updater.UpdateType;
 import me.TheEpicButterStudios.InstaTnT.exception.*;
+import me.TheEpicButterStudios.InstaTnT.event.onCommand;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -74,6 +75,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 			if (updater.getResult() == UpdateResult.UPDATE_AVAILABLE) {
 			    this.getLogger().info("New version available! " + updater.getLatestName() + " Downloading...");
 			}}
+			this.getCommand("instaboom").setExecutor(new onCommand(this));
 		}
 
     
