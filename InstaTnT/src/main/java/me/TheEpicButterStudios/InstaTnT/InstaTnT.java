@@ -69,6 +69,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 			getLogger().info("----- Enabled! -----");
 			getLogger().info("Well, happy explosions!");
 			getConfig().options().copyDefaults(true);
+			for (Player player : Bukkit.getServer().getOnlinePlayers()) {
+			    playerList.put(player.getName(), playerData(player));
+			}
 			if(update) {
 			Updater updater = new Updater(this, 67156, this.getFile(), UpdateType.DEFAULT, true);
 			if (updater.getResult() == UpdateResult.UPDATE_AVAILABLE) {

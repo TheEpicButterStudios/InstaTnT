@@ -12,7 +12,7 @@ import me.TheEpicButterStudios.InstaTnT.exception.SenderIsNotInstanceOfPlayerExc
 
 public class commandExecutor extends InstaTnT implements CommandExecutor
 {
-	private InstaTnT plugin;
+	private final InstaTnT plugin;
 	public commandExecutor(InstaTnT plugin)
 	{
 		this.plugin = plugin;
