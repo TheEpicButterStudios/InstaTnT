@@ -10,10 +10,10 @@ import org.bukkit.entity.Player;
 import me.TheEpicButterStudios.InstaTnT.InstaTnT;
 import me.TheEpicButterStudios.InstaTnT.exception.SenderIsNotInstanceOfPlayerException;
 
-public class onCommand extends InstaTnT implements CommandExecutor
+public class CommandExecutor extends InstaTnT implements CommandExecutor
 {
 	private InstaTnT plugin;
-	public onCommand(InstaTnT plugin)
+	public CommandExecutor(InstaTnT plugin)
 	{
 		this.plugin = plugin;
 	}

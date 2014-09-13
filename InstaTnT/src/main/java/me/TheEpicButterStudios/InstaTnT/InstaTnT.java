@@ -74,7 +74,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 			if (updater.getResult() == UpdateResult.UPDATE_AVAILABLE) {
 			    this.getLogger().info("New version available! " + updater.getLatestName() + " Downloading...");
 			}}
-			this.getCommand("instaboom").setExecutor(new onCommand(this));
+			this.getCommand("instaboom").setExecutor(new CommandExecutor(this));
 		}
 
     
