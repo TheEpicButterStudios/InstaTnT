@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import me.TheEpicButterStudios.InstaTnT.Updater.UpdateResult;
 import me.TheEpicButterStudios.InstaTnT.Updater.UpdateType;
 import me.TheEpicButterStudios.InstaTnT.exception.*;
-import me.TheEpicButterStudios.InstaTnT.event.onCommand;
+import me.TheEpicButterStudios.InstaTnT.event.CommandExecutor;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
