@@ -37,13 +37,19 @@ import org.bukkit.plugin.java.JavaPlugin;
 /**
  * InstaTnT.java
  * <br>
- * Last edited 6/30/2014
+ * Last edited 9/13/14
  * <br>
  * <b>InstaTnT usage:</b>
  * <br>Coming soon.
  * @author TheEpicButterStudios
  * 
  * @version 1.0
+ * @see
+ * 355 Lines of code!
+ * <p>
+ * @returns this.plugin
+ * @extends org.bukkit.plugin.java.JavaPlugin
+ * @implenents org.bukkit.event.Listener
  * 
  */
 	public class InstaTnT extends JavaPlugin implements Listener
@@ -69,9 +75,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 			getLogger().info("----- Enabled! -----");
 			getLogger().info("Well, happy explosions!");
 			getConfig().options().copyDefaults(true);
-			for (Player player : Bukkit.getServer().getOnlinePlayers()) {
-			    playerList.put(player.getName(), playerData(player));
-			}
 			if(update) {
 			Updater updater = new Updater(this, 67156, this.getFile(), UpdateType.DEFAULT, true);
 			if (updater.getResult() == UpdateResult.UPDATE_AVAILABLE) {
@@ -117,15 +120,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 			return InstaTnTUsers.contains(player);
 		}
 		public static Player player;
-		@EventHandler(priority=EventPriority.NORMAL)
-		public void BlockPlace(BlockPlaceEvent event){
-			if(InstaTnTUsers.contains(event.getPlayer())){
-				 if(event.getBlock().getType().equals(Material.TNT)){
-			        	event.getBlock().setType(Material.AIR); 
-			        	event.getPlayer().getWorld().spawnEntity(event.getBlock().getLocation(), EntityType.PRIMED_TNT);
-			        	return;
-					
-		}
 		
 	
 	       
