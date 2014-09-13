@@ -66,9 +66,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 			getLogger().info("by TheEpicButterStudios!");
 			getLogger().info("Running version " + version + ".");
 			getLogger().info("----- InstaTnT -----");
-			getLogger().info("----- Enabled -----");
+			getLogger().info("----- Enabled! -----");
 			getLogger().info("Well, happy explosions!");
-			getServer().getPluginManager().registerEvents(this, this);
 			getConfig().options().copyDefaults(true);
 			if(update) {
 			Updater updater = new Updater(this, 67156, this.getFile(), UpdateType.DEFAULT, true);
