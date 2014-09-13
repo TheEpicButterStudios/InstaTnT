@@ -47,10 +47,9 @@ import org.bukkit.plugin.java.JavaPlugin;
  * @see
  * 355 Lines of code!
  * <p>
- * @returns this.plugin
- * @extends org.bukkit.plugin.java.JavaPlugin
- * @implenents org.bukkit.event.Listener
- * 
+ * Woo Hoo!
+ * @see
+ * {@link http://dev.bukkit.org/bukkit-plugins/instatnt/}
  */
 	public class InstaTnT extends JavaPlugin implements Listener
 	{
