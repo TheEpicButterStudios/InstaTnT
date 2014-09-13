@@ -54,7 +54,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 	public class InstaTnT extends JavaPlugin implements Listener
 	{
 	public final ArrayList<Player> InstaTnTUsers = new ArrayList<Player>();
-	public String version = "v1.0-DEV";
+	public String version = "v1.0-R0.3";
     boolean enable = getConfig().getBoolean("plugin-enabled");
     boolean update = getConfig().getBoolean("auto-update");
     public boolean disable_cmd = getConfig().getBoolean("disable-cmd");
