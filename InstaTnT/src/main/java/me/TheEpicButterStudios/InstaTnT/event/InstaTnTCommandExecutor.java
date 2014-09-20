@@ -13,7 +13,9 @@ import me.TheEpicButterStudios.InstaTnT.exception.SenderIsNotInstanceOfPlayerExc
 public class InstaTnTCommandExecutor implements CommandExecutor
 {
 	private final InstaTnT plugin;
-	public commandExecutor(InstaTnT plugin)
+	InstaTnT InstaTnT = new InstaTnT();
+	SenderIsNotInstanceOfPlayerException SenderIsNotInstanceOfPlayerException = new SenderIsNotInstanceOfPlayerException();
+	public InstaTnTCommandExecutor(InstaTnT plugin)
 	{
 		this.plugin = plugin;
 	}
@@ -35,14 +37,14 @@ public class InstaTnTCommandExecutor implements CommandExecutor
 				{
 					sender.sendMessage("Too many arguments! Try /instaboom help");
 				}
-				if(super.disable_cmd)
+				if(InstaTnT.disable_cmd)
 				{
 					((Player) sender).sendMessage("Sorry, what?");
 					
 					return false;
 				}
 				if(args[0].equals(null)){
-					super.toggleInstaTnT((Player) sender);
+					InstaTnT.toggleInstaTnT((Player) sender);
 				}
 					if(args[0].equalsIgnoreCase("help"))
 					{
@@ -53,17 +55,17 @@ public class InstaTnTCommandExecutor implements CommandExecutor
 						((Player) sender).sendMessage(ChatColor.RED + "/instaboom reload full: Reloads the server. OP ONLY! -oOo");
 						((Player) sender).sendMessage(ChatColor.LIGHT_PURPLE + "/instaboom dev: Are you a plugin dev intrested in helping? -oOo");
 						((Player) sender).sendMessage(ChatColor.LIGHT_PURPLE + "                Command displays info about helping! Not OP only. -oOo");
-						((Player) sender).sendMessage(ChatColor.GRAY + "InstaTnT version " + version + " by TheEpicButterStudios");
+						((Player) sender).sendMessage(ChatColor.GRAY + "InstaTnT version " + InstaTnT.version + " by TheEpicButterStudios");
 						((Player) sender).sendMessage(ChatColor.YELLOW + "/instatnt [arguments]: Does the same as /instaboom [args] -oOo");
 						((Player) sender).sendMessage(ChatColor.DARK_AQUA + "oOo------------- InstaTnT Help ------------oOo");
 					}
 					if(args[0].equalsIgnoreCase("reload") && ((Player) sender).isOp())
 					{
-						super.reloadConfig();
-						((Player) sender).sendMessage("Reloaded InstaTnT, version " + version + ".");
+						InstaTnT.reloadConfig();
+						((Player) sender).sendMessage("Reloaded InstaTnT, version " + InstaTnT.version + ".");
 						if((args[1].equalsIgnoreCase("full")) || args[0].equalsIgnoreCase("reload"))
 						{
-							if(player.hasPermission("InstaTnT.reload.full"))
+							if(((Player) sender).hasPermission("InstaTnT.reload.full"))
 							{
 								Bukkit.reload();
 							} else {

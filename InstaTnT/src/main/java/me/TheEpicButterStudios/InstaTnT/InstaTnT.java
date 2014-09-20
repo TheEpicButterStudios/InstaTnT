@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import me.TheEpicButterStudios.InstaTnT.Updater.UpdateResult;
 import me.TheEpicButterStudios.InstaTnT.Updater.UpdateType;
 import me.TheEpicButterStudios.InstaTnT.exception.*;
-import me.TheEpicButterStudios.InstaTnT.event.commandExecutor;
+import me.TheEpicButterStudios.InstaTnT.event.InstaTnTCommandExecutor;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -63,6 +63,7 @@ import org.bukkit.plugin.java.JavaPlugin;
     @Override
 	public void onEnable()
 		{
+    	    this.getCommand("instaboom").setExecutor(new InstaTnTCommandExecutor(this));
     	    if(!enable)
     	    {
     	    	Bukkit.getPluginManager().disablePlugin(this);
@@ -79,7 +80,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 			if (updater.getResult() == UpdateResult.UPDATE_AVAILABLE) {
 			    this.getLogger().info("New version available! " + updater.getLatestName() + " Downloading...");
 			}}
-			this.getCommand("instaboom").setExecutor(new InstaTnTCommandExecutor(this));
 		}
 
     
@@ -90,7 +90,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 			getLogger().info("Good Night!");
 			saveConfig();
 		}
-		protected void toggleInstaTnT(CommandSender sender)
+		public void toggleInstaTnT(CommandSender sender)
 		{
 		
 			if(!(sender instanceof Player))
@@ -125,5 +125,5 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 			        
 		
-} } }
+
 }
