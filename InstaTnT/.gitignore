@@ -1,2 +1,40 @@
-/bin
+# Eclipse
+*.pydevproject
+.metadata
+.gradle
+bin/
+tmp/
 /target
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.externalToolBuilders/
+*.launch
+.cproject
+.buildpath
+.target
+.texlipse
+
+# JetBrains IDEs
+/*.iml
+.idea/
+*.ipr
+*.iws
+out/
+.idea_modules/
+atlassian-ide-plugin.xml
+com_crashlytics_export_strings.xml
+
+# Others
+.project
+.classpath
+.DS_Store
+Thumbs.db
+Desktop.ini
+.directory
+*~
+
